@@ -1,5 +1,8 @@
 ---
 import Header from "../components/header.astro";
+import Hero from "../components/hero.astro";
+import Gutter from "../components/gutter.astro";
+import About from "../components/about.astro";
 
 interface Props {
   title: string;
@@ -26,5 +29,26 @@ const { title } = Astro.props;
   </head>
   <body class="h-full">
     <Header />
+    <main>
+      <Hero />
+      <Gutter />
+      <About />
+      <Gutter />
+    </main>
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --alpha: 1;
+    --primary: 45, 106, 224;
+    --text-muted: 160, 160, 160;
+
+    /* Streak borders and gutters */
+    --opacity-fade-0: 1;
+    --opacity-fade-1: 0.3;
+    --streak-color: 180, 180, 180;
+    --color-fade-0: rgba(var(--streak-color), var(--opacity-fade-0));
+    --color-fade-1: rgba(var(--streak-color), var(--opacity-fade-1));
+  }
+</style>
