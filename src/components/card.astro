@@ -1,0 +1,37 @@
+---
+const { classes } = Astro.props;
+---
+
+<div class={`card mx-auto ${classes}`}>
+  <div class="card-glimmer"></div>
+  <slot />
+</div>
+
+<style>
+  .card {
+    padding: 2rem;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-background);
+  }
+
+  .card-glimmer {
+    position: absolute;
+    z-index: -1;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(
+      110deg,
+      transparent,
+      transparent,
+      var(--color-fade-1),
+      var(--color-fade-0),
+      var(--color-fade-1),
+      transparent,
+      transparent
+    );
+  }
+</style>
