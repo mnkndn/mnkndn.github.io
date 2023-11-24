@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        inter: ["DM Sans", "sans-serif"],
       },
       colors: {
-        primary: "rgb(var(--primary), var(--alpha))",
-        textMuted: "rgb(var(--text-muted))",
+        primary: "rgb(var(--primary) / <alpha-value>)",
+        textMuted: "rgb(var(--text-muted) / <alpha-value>)",
       },
     },
   },
