@@ -2,67 +2,76 @@
 import Card from "./card.astro";
 ---
 
-<section class="mx-auto max-w-7xl h-[90vh] py-32">
-  <div class="flex flex-col justify-between h-full">
-    <div
-      class="border-2 border-primary bg-primary/10 w-fit mx-auto p-1 px-6 rounded-full text-primary"
-    >
-      Experience
-    </div>
-    <div class="flex justify-evenly md:2 lg:mt-0">
-      <a href="https://www.infosys.com/"
-        ><img
-          class="aspect-auto h-12 md:h-16 lg:h-24 saturate-0 hover:saturate-100 transition-[filter]"
-          src="/InfosysOriginal.png"
-        /></a
-      >
-      <a href="https://www.incedoinc.com/"
-        ><img
-          class="aspect-auto h-12 md:h-16 lg:h-24 saturate-0 hover:saturate-100 transition-[filter]"
-          src="/IncedoOriginal.png"
-        /></a
-      >
-      <a href="https://autonom8.com/"
-        ><img
-          class="aspect-auto h-12 md:h-16 lg:h-24 saturate-0 hover:saturate-100 transition-[filter]"
-          src="/A8Original.png"
-        /></a
-      >
-      <a href="https://www.getcerta.com/"
-        ><img
-          class="aspect-auto h-12 md:h-16 lg:h-24 saturate-0 hover:saturate-100 transition-[filter]"
-          src="/CertaOriginal.png"
-        /></a
-      >
-    </div>
-    <Card classes="">
-      <div class="flex gap-4 items-baseline">
-        <h3 class="font-semibold text-xl text-white">
-          Senior Frontend Engineer
-        </h3>
-        <span class="font-normal text-sm text-textMuted"
-          >Jun 2000 - Mar 2024</span
+<section id="experience" class="py-16 md:py-20 px-6">
+  <h2 class="text-5xl font-light text-gray-300 text-center flex flex-col gap-2">
+    <span class="text-primary font-bold">Work</span>
+    <span>Experiences</span>
+  </h2>
+  <div class="mx-auto max-w-7xl pt-12">
+    <div class="flex flex-col gap-12 justify-between h-full">
+      <div class="flex justify-evenly md:2 lg:mt-0">
+        <a
+          class="flex items-center justify-center"
+          href="https://www.infosys.com/"
+          ><img
+            class="aspect-auto w-20 md:w-24 lg:w-36 opacity-50 hover:opacity-100 duration-75 transition-opacity"
+            src="/Infosys.svg"
+          /></a
+        >
+        <a
+          class="flex items-center justify-center"
+          href="https://www.incedoinc.com/"
+          ><img
+            class="aspect-auto w-20 md:w-24 lg:w-36 opacity-50 hover:opacity-100 duration-75 transition-opacity"
+            src="/Incedo.svg"
+          /></a
+        >
+        <a class="flex items-center justify-center" href="https://autonom8.com/"
+          ><img
+            class="aspect-auto w-20 md:w-24 lg:w-36 opacity-50 hover:opacity-100 duration-75 transition-opacity"
+            src="/A8.svg"
+          /></a
+        >
+        <a
+          class="flex items-center justify-center"
+          href="https://www.getcerta.com/"
+          ><img
+            class="aspect-auto w-20 md:w-24 lg:w-36 opacity-50 hover:opacity-100 duration-75 transition-opacity"
+            src="/Certa.svg"
+          /></a
         >
       </div>
-      <ul class="mt-4 ml-4">
-        <li>
-          Lead the development of a robust data visualization tool that allowed
-          customers to create dynamic visualizations for various business
-          metrics.
-        </li>
-        <li>
-          Actively contributed in implementing a highly customisable charting
-          suite wrapped around D3.js.
-        </li>
-        <li>
-          Worked as an interim module lead team taking up responsibilities such
-          as requirement gathering and outlining roadmaps to the client.
-        </li>
-        <li>
-          Worked as an interim module lead team taking up responsibilities such
-          as requirement gathering and outlining roadmaps to the client.
-        </li>
-      </ul>
-    </Card>
+      <Card classes="">
+        <div
+          class="flex flex-col items-center md:flex-row md:justify-start gap-4 md:items-baseline"
+        >
+          <h3 class="font-semibold text-2xl text-white">
+            Senior Frontend Engineer
+          </h3>
+          <span class="font-light text-xs text-gray-500"
+            >Jun 2000 - Mar 2024</span
+          >
+        </div>
+        <ul class="mt-4 ml-4 max-w-[60ch] text-base text-gray-400 list-disc">
+          <li>
+            Lead the development of a robust data visualization tool that
+            allowed customers to create dynamic visualizations for various
+            business metrics.
+          </li>
+          <li>
+            Actively contributed in implementing a highly customisable charting
+            suite wrapped around D3.js.
+          </li>
+          <li>
+            Worked as an interim module lead team taking up responsibilities
+            such as requirement gathering and outlining roadmaps to the client.
+          </li>
+          <li>
+            Worked as an interim module lead team taking up responsibilities
+            such as requirement gathering and outlining roadmaps to the client.
+          </li>
+        </ul>
+      </Card>
+    </div>
   </div>
 </section>

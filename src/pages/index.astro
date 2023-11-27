@@ -5,7 +5,6 @@ import Gutter from "../components/gutter.astro";
 import About from "../components/about.astro";
 import Experience from "../components/experience.astro";
 import Expertise from "../components/expertise.astro";
-import Contact from "../components/contact.astro";
 import Footer from "../components/footer.astro";
 
 interface Props {
@@ -44,13 +43,12 @@ const { title } = Astro.props;
     <main>
       <div class="fixed-gradient"></div>
       <Hero />
-      <!-- <Gutter /> -->
+      <Gutter />
       <About />
-      <!-- <Gutter /> -->
+      <Gutter />
       <Experience />
       <Gutter />
       <Expertise />
-      <Contact />
       <Gutter />
       <Footer />
     </main>
@@ -68,7 +66,7 @@ const { title } = Astro.props;
     --card-background: #060e22;
     --opacity-fade-0: 1;
     --opacity-fade-1: 0.3;
-    --streak-color: 180, 180, 180;
+    --streak-color: 147, 197, 253;
     --color-fade-0: rgba(var(--streak-color), var(--opacity-fade-0));
     --color-fade-1: rgba(var(--streak-color), var(--opacity-fade-1));
   }

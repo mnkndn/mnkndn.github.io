@@ -3,40 +3,45 @@ import { Image } from "astro:assets";
 import Photo from "../assets/PortraitEditMonotone.png";
 ---
 
-<section class="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 relative">
+<section id="about" class="py-16 md:py-20 px-6">
+  <h2
+    class="text-5xl font-light text-gray-300 text-center flex flex-col gap-2 pb-12"
+  >
+    <span class="text-primary font-bold"
+      >About <span class="text-gray-400 font-light">Me</span></span
+    >
+  </h2>
   <div
-    class="relative p-3 self-center justify-self-center w-fit bg-[#141f35] rounded-xl border border-[#29385d]"
+    class="max-w-7xl grid grid-cols-1 md:grid-cols-2 relative gap-y-12 md:gap-y-0 md:gap-x-12"
   >
     <div
-      class="absolute top-[-2px] rounded-xl z-[-2] left-[-2px] h-[calc(100%+4px)] w-[calc(100%+4px)] bg-gradient-to-r from-transparent via-blue-300/80 via-50%"
+      class="relative p-3 self-center justify-self-center w-fit bg-[#141f35] rounded-xl border border-[#29385d]"
     >
+      <div
+        class="absolute top-[-2px] rounded-xl z-[-2] left-[-2px] h-[calc(100%+4px)] w-[calc(100%+4px)] bg-gradient-to-r from-transparent via-blue-300/80 via-50%"
+      >
+      </div>
+      <Image
+        class="object-cover w-60 sm:w-80 md:w-96 rounded-xl opacity-70"
+        src={Photo}
+        alt="A description of my image."
+      />
     </div>
-    <Image
-      id="photo"
-      class="object-cover h-64 w-64 md:h-96 md:w-96 rounded-xl opacity-70"
-      src={Photo}
-      alt="A description of my image."
-    />
-  </div>
-  <div class="flex flex-col p-12 gap-4 justify-center">
-    <div
-      class="border-2 border-primary bg-primary/10 w-fit p-1 px-6 rounded-full text-primary"
-    >
-      About
+    <div class="flex flex-col gap-4 justify-center">
+      <p class="text-textMuted">
+        Frontend Engineer for over 6 years focussed on building better user
+        experience on the web. Based in India.
+      </p>
+      <p class="text-textMuted">
+        I love working in an impactful product which would make lives easier.
+      </p>
+      <p class="text-textMuted">
+        Frontend Engineer for over 6 years focussed on building better user
+        experience on the web. Based in India.
+      </p>
+      <p class="text-textMuted">
+        I love working in an impactful product which would make lives easier.
+      </p>
     </div>
-    <p class="text-textMuted">
-      Frontend Engineer for over 6 years focussed on building better user
-      experience on the web. Based in India.
-    </p>
-    <p class="text-textMuted">
-      I love working in an impactful product which would make lives easier.
-    </p>
-    <p class="text-textMuted">
-      Frontend Engineer for over 6 years focussed on building better user
-      experience on the web. Based in India.
-    </p>
-    <p class="text-textMuted">
-      I love working in an impactful product which would make lives easier.
-    </p>
   </div>
 </section>

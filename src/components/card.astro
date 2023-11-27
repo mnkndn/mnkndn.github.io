@@ -2,7 +2,7 @@
 const { classes } = Astro.props;
 ---
 
-<div class={`card mx-auto ${classes}`}>
+<div class={`card  border rounded-lg border-[#29385d] mx-auto ${classes}`}>
   <div class="card-glimmer"></div>
   <slot />
 </div>
@@ -11,9 +11,8 @@ const { classes } = Astro.props;
   .card {
     padding: 2rem;
     position: relative;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--card-background);
+    box-shadow: inset 0px 0px 0px 4px #08101d;
+    background: linear-gradient(180deg, #0d172d, #070d1c);
   }
 
   .card-glimmer {
@@ -23,6 +22,7 @@ const { classes } = Astro.props;
     width: calc(100% + 4px);
     top: -2px;
     left: -2px;
+    border-radius: 8px;
     background: linear-gradient(
       110deg,
       transparent,

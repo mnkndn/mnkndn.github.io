@@ -1,27 +1,66 @@
 ---
-import Card from "./card.astro";
 import DevIcon from "./devicon.astro";
+import Card from "./card.astro";
 ---
 
-<section class="mx-auto max-w-7xl px-4 flex flex-col gap-12 pt-32">
-  <div
-    class="self-center bg-primary/10 border-2 border-primary w-fit p-1 px-6 rounded-full text-primary"
-  >
-    Expertise
+<section id="tools" class="py-16 md:py-20 px-6">
+  <h2 class="text-5xl font-light text-gray-300 text-center flex flex-col gap-2">
+    <span class="text-primary font-bold">Technologies</span>
+    <span> I work with</span>
+  </h2>
+  <div class="mx-auto max-w-7xl pt-12 flex flex-col">
+    <ul class="flex gap-12 flex-wrap justify-center fade">
+      <DevIcon iconName="devicon-html5-plain colored" />
+      <DevIcon iconName="devicon-css3-plain colored" />
+      <DevIcon iconName="devicon-tailwindcss-plain colored" />
+      <DevIcon iconName="devicon-javascript-plain colored" />
+      <DevIcon iconName="devicon-react-original colored" />
+      <DevIcon iconName="devicon-typescript-plain colored" />
+      <DevIcon iconName="devicon-nextjs-original colored" />
+      <DevIcon iconName="devicon-webpack-plain colored" />
+      <DevIcon iconName="devicon-jest-plain colored" />
+      <DevIcon iconName="devicon-d3js-plain colored" />
+      <DevIcon iconName="devicon-nodejs-plain colored" />
+      <DevIcon iconName="devicon-mongodb-plain colored" />
+      <DevIcon iconName="devicon-graphql-plain colored" />
+      <DevIcon iconName="devicon-postgresql-plain colored" />
+    </ul>
   </div>
-  <ul class="flex gap-8 flex-wrap justify-center">
-    <DevIcon iconName="devicon-javascript-plain colored" />
-    <DevIcon iconName="devicon-react-original colored" />
-    <DevIcon iconName="devicon-css3-plain colored" />
-    <DevIcon iconName="devicon-tailwindcss-plain colored" />
-    <DevIcon iconName="devicon-nodejs-plain colored" />
-    <DevIcon iconName="devicon-typescript-plain colored" />
-    <DevIcon iconName="devicon-webpack-plain colored" />
-    <DevIcon iconName="devicon-jest-plain colored" />
-    <DevIcon iconName="devicon-mongodb-plain colored" />
-    <DevIcon iconName="devicon-graphql-plain colored" />
-    <DevIcon iconName="devicon-d3js-plain colored" />
-    <DevIcon iconName="devicon-postgresql-plain colored" />
-    <DevIcon iconName="devicon-nextjs-original colored" />
-  </ul>
+  <div class="pt-16 w-fit min-w-[30rem] mx-auto">
+    <Card>
+      <div
+        class="flex justify-around items-center gap-4 md:gap-16 flex-col md:flex-row md:items-center"
+      >
+        <h3 class="text-2xl font-semibold text-white">Hiring ?</h3>
+        <ul>
+          Interested in:
+          <li>Full time opportunities</li>
+          <li>Senior frontend roles</li>
+        </ul>
+        <a
+          href="mailto:manikndnpradeep@gmail.com"
+          class="bg-primary hover:bg-primary/90 text-[#d7e5ff] px-4 py-2 rounded-md transition-colors flex items-center gap-3"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-mail"
+            ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+              d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+          ><span>Drop an email</span></a
+        >
+      </div>
+    </Card>
+  </div>
 </section>
+
+<style>
+  .fade {
+    -webkit-mask: linear-gradient(180deg, white 70%, transparent);
+  }
+</style>
