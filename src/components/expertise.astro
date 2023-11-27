@@ -1,6 +1,6 @@
 ---
-import DevIcon from "./devicon.astro";
-import Card from "./card.astro";
+import DevIcon from "./devicon.jsx";
+import Card from "./card.jsx";
 ---
 
 <section id="skills" class="py-16 md:py-20 px-6">
@@ -9,33 +9,84 @@ import Card from "./card.astro";
     <span> I work with</span>
   </h2>
   <div class="mx-auto max-w-7xl pt-12 flex flex-col">
-    <ul class="flex gap-12 flex-wrap justify-center fade">
-      <DevIcon iconName="devicon-html5-plain colored" />
-      <DevIcon iconName="devicon-css3-plain colored" />
-      <DevIcon iconName="devicon-tailwindcss-plain colored" />
-      <DevIcon iconName="devicon-javascript-plain colored" />
-      <DevIcon iconName="devicon-react-original colored" />
-      <DevIcon iconName="devicon-typescript-plain colored" />
-      <DevIcon iconName="devicon-nextjs-original colored" />
-      <DevIcon iconName="devicon-webpack-plain colored" />
-      <DevIcon iconName="devicon-jest-plain colored" />
-      <DevIcon iconName="devicon-d3js-plain colored" />
-      <DevIcon iconName="devicon-nodejs-plain colored" />
-      <DevIcon iconName="devicon-mongodb-plain colored" />
-      <DevIcon iconName="devicon-graphql-plain colored" />
-      <DevIcon iconName="devicon-postgresql-plain colored" />
+    <ul class="flex gap-8 md:gap-12 flex-wrap justify-center mask-fade">
+      <DevIcon
+        client:load
+        tooltip="HTML"
+        iconName="devicon-html5-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="CSS"
+        iconName="devicon-css3-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="Tailwind"
+        iconName="devicon-tailwindcss-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="Javascript"
+        iconName="devicon-javascript-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="React"
+        iconName="devicon-react-original colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="Typescript"
+        iconName="devicon-typescript-plain colored"
+      />
+      <DevIcon client:load tooltip="NextJS" iconName="devicon-nextjs-plain" />
+      <DevIcon
+        client:load
+        tooltip="Webpack"
+        iconName="devicon-webpack-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="Jest"
+        iconName="devicon-jest-plain colored"
+      />
+      <DevIcon client:load tooltip="D3" iconName="devicon-d3js-plain colored" />
+      <DevIcon
+        client:load
+        tooltip="NodeJS"
+        iconName="devicon-nodejs-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="MongoDB"
+        iconName="devicon-mongodb-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="GraphQL"
+        iconName="devicon-graphql-plain colored"
+      />
+      <DevIcon
+        client:load
+        tooltip="PostgresQL"
+        iconName="devicon-postgresql-plain colored"
+      />
     </ul>
   </div>
-  <div class="pt-16 w-fit min-w-[24rem] mx-auto">
-    <Card>
+  <div class="pt-24 md:pt-36 lg:pt-48 w-fit min-w-[24rem] mx-auto">
+    <Card classes="w-fit md:w-full">
       <div
-        class="flex justify-around items-center gap-4 md:gap-16 flex-col md:flex-row md:items-center"
+        class="flex justify-around items-center gap-8 md:gap-16 flex-col md:flex-row md:items-center text-center md:text-start"
       >
-        <h3 class="text-2xl font-semibold text-white">Hiring ?</h3>
+        <h3 class="hidden md:block text-2xl font-semibold text-white">
+          Hiring ?
+        </h3>
         <ul>
-          Interested in:
+          <span class="text-gray-500">Open to:</span>
           <li>Full time opportunities</li>
-          <li>Senior frontend roles</li>
+          <li>Relocation to UK</li>
+          <li>Work From Home</li>
         </ul>
         <a
           href="mailto:manikndnpradeep@gmail.com"
@@ -52,7 +103,7 @@ import Card from "./card.astro";
             class="lucide lucide-mail"
             ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
               d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
-          ><span>Drop an email</span></a
+          ><span>Get in touch</span></a
         >
       </div>
     </Card>
@@ -60,7 +111,7 @@ import Card from "./card.astro";
 </section>
 
 <style>
-  .fade {
+  .mask-fade {
     -webkit-mask: linear-gradient(180deg, white 70%, transparent);
   }
 </style>

@@ -3,7 +3,7 @@ import Header from "../components/header.astro";
 import Hero from "../components/hero.astro";
 import Gutter from "../components/gutter.astro";
 import About from "../components/about.astro";
-import Experience from "../components/experience.astro";
+import Experience from "../components/experience.jsx";
 import Expertise from "../components/expertise.astro";
 import Footer from "../components/footer.astro";
 
@@ -46,7 +46,7 @@ const { title } = Astro.props;
       <Gutter />
       <About />
       <Gutter />
-      <Experience />
+      <Experience client:load />
       <Gutter />
       <Expertise />
       <Gutter />
@@ -64,11 +64,7 @@ const { title } = Astro.props;
     /* Streak borders and gutters */
     --border-color: #272727;
     --card-background: #060e22;
-    --opacity-fade-0: 1;
-    --opacity-fade-1: 0.3;
     --streak-color: 147, 197, 253;
-    --color-fade-0: rgba(var(--streak-color), var(--opacity-fade-0));
-    --color-fade-1: rgba(var(--streak-color), var(--opacity-fade-1));
   }
 
   html {
@@ -79,6 +75,7 @@ const { title } = Astro.props;
   body {
     background-color: #02060e;
     color: #ffffff;
+    overflow-x: hidden;
   }
 
   .fixed-gradient {
@@ -95,4 +92,79 @@ const { title } = Astro.props;
     width: 100%;
     z-index: -1;
   }
+
+  /* Glitter Effect - Start */
+  .card {
+    position: relative;
+    box-shadow: inset 0px 0px 0px 4px #08101d;
+    background: linear-gradient(180deg, #0d172d, #070d1c);
+  }
+
+  .card-glitter {
+    position: absolute;
+    z-index: -1;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    border-radius: 8px;
+    background: linear-gradient(
+      110deg,
+      transparent,
+      transparent,
+      rgba(var(--streak-color), 0.3),
+      rgba(var(--streak-color), 1),
+      rgba(var(--streak-color), 0.3),
+      transparent,
+      transparent
+    );
+  }
+
+  .glitter-border .card-glitter {
+    background: linear-gradient(
+      120deg,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      rgba(var(--streak-color), 0.3),
+      rgba(var(--streak-color), 1),
+      rgba(var(--streak-color), 0.3),
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    );
+  }
+
+  .glitter-border {
+    border: 1px solid rgb(13, 33, 73);
+  }
+
+  /* Glitter Effect - End */
+
+  /* Fade Effect - Start */
+
+  .fade-enter {
+    opacity: 0;
+  }
+  .fade-enter-active {
+    opacity: 1;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+  }
+  .fade-enter-active,
+  .fade-exit-active {
+    transition: opacity 150ms ease-out;
+  }
+
+  /* Fade Effect - End */
 </style>
