@@ -6,6 +6,7 @@ import About from "../components/about.astro";
 import Experience from "../components/experience.jsx";
 import Expertise from "../components/expertise.astro";
 import Footer from "../components/footer.astro";
+import { Tooltips } from "astro-tooltips";
 
 interface Props {
   title: string;
@@ -37,6 +38,7 @@ const { title } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <Tooltips interactive={true} delay={[50, 0]} placement={"top"} />
   </head>
   <body class="min-h-full">
     <Header />
@@ -53,144 +55,160 @@ const { title } = Astro.props;
       <Gutter />
       <Footer />
     </main>
+    <script>
+      console.log(
+        "%c Hey, fellow developer! ",
+        "font-size: 20px;color: #2d6ae0; font-weight: bold",
+      );
+      console.log(
+        "%c Glad to have you around here.",
+        "font-size: 20px;color: #2d6ae0; font-weight: bold",
+      );
+      const movingDot = document.querySelector(".moving-dot") as HTMLElement;
+      document.body.addEventListener("mousemove", (e) => {
+        var x = e.pageX;
+        var y = e.pageY;
+        var newposX = x - 192.5;
+        var newposY = y - 265;
+        movingDot.style.transform = `translate3d(${newposX}px,${newposY}px,0px)`;
+      });
+    </script>
+
+    <style is:global>
+      :root {
+        --alpha: 1;
+        --primary: 45 106 224;
+        --text-muted: 160 160 160;
+
+        /* Streak borders and gutters */
+        --border-color: #272727;
+        --card-background: #060e22;
+        --streak-color: 147, 197, 253;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+
+      body {
+        background-color: #02060e;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      .fixed-gradient {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #2d6ae0 0,
+          rgba(0, 220, 130, 0) 100%
+        );
+        filter: blur(180px);
+        height: 30vh;
+        opacity: 0.6;
+        position: fixed;
+        top: 25vh;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .moving-dot {
+        z-index: 5;
+        background-color: #2d6ae044;
+        filter: blur(200px);
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        opacity: 0.6;
+        z-index: -1;
+        position: absolute;
+        transform: translate3d(-50%, -50%, 0);
+        transition: transform 0.5s cubic-bezier(0.02, 1.23, 0.79, 1.08);
+      }
+
+      /* Glitter Effect - Start */
+      .card {
+        position: relative;
+        box-shadow: inset 0px 0px 0px 4px #08101d;
+        background: linear-gradient(180deg, #0d172d, #070d1c);
+      }
+
+      .card-glitter {
+        position: absolute;
+        z-index: -1;
+        height: calc(100% + 4px);
+        width: calc(100% + 4px);
+        top: -2px;
+        left: -2px;
+        border-radius: 8px;
+        background: linear-gradient(
+          110deg,
+          transparent,
+          transparent,
+          rgba(var(--streak-color), 0.3),
+          rgba(var(--streak-color), 1),
+          rgba(var(--streak-color), 0.3),
+          transparent,
+          transparent
+        );
+      }
+
+      .glitter-border .card-glitter {
+        background: linear-gradient(
+          120deg,
+          transparent,
+          transparent,
+          transparent,
+          transparent,
+          transparent,
+          transparent,
+          rgba(var(--streak-color), 0.3),
+          rgba(var(--streak-color), 1),
+          rgba(var(--streak-color), 0.3),
+          transparent,
+          transparent,
+          transparent,
+          transparent,
+          transparent,
+          transparent
+        );
+      }
+
+      .glitter-border {
+        border: 1px solid rgb(13, 33, 73);
+      }
+
+      /* Glitter Effect - End */
+
+      /* Fade Effect - Start */
+
+      .fade-enter {
+        opacity: 0;
+      }
+      .fade-enter-active {
+        opacity: 1;
+      }
+      .fade-exit {
+        opacity: 1;
+      }
+      .fade-exit-active {
+        opacity: 0;
+      }
+      .fade-enter-active,
+      .fade-exit-active {
+        transition: opacity 150ms ease-out;
+      }
+
+      /* Fade Effect - End */
+
+      .tippy-box[data-theme="default"] {
+        color: #e0eaff;
+        background: #163472;
+      }
+
+      .tippy-arrow::before {
+        color: #163472;
+      }
+    </style>
   </body>
 </html>
-
-<script>
-  const movingDot = document.querySelector(".moving-dot") as HTMLElement;
-  document.body.addEventListener("mousemove", (e) => {
-    var x = e.pageX;
-    var y = e.pageY;
-    var newposX = x - 192.5;
-    var newposY = y - 265;
-    movingDot.style.transform = `translate3d(${newposX}px,${newposY}px,0px)`;
-  });
-</script>
-
-<style is:global>
-  :root {
-    --alpha: 1;
-    --primary: 45 106 224;
-    --text-muted: 160 160 160;
-
-    /* Streak borders and gutters */
-    --border-color: #272727;
-    --card-background: #060e22;
-    --streak-color: 147, 197, 253;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-  }
-
-  body {
-    background-color: #02060e;
-    color: #ffffff;
-    overflow-x: hidden;
-  }
-
-  .fixed-gradient {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      #2d6ae0 0,
-      rgba(0, 220, 130, 0) 100%
-    );
-    filter: blur(180px);
-    height: 30vh;
-    opacity: 0.6;
-    position: fixed;
-    top: 25vh;
-    width: 100%;
-    z-index: -1;
-  }
-
-  .moving-dot {
-    z-index: 5;
-    background-color: #2d6ae044;
-    filter: blur(200px);
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    opacity: 0.6;
-    z-index: -1;
-    position: absolute;
-    transform: translate3d(-50%, -50%, 0);
-    transition: transform 0.5s cubic-bezier(0.02, 1.23, 0.79, 1.08);
-  }
-
-  /* Glitter Effect - Start */
-  .card {
-    position: relative;
-    box-shadow: inset 0px 0px 0px 4px #08101d;
-    background: linear-gradient(180deg, #0d172d, #070d1c);
-  }
-
-  .card-glitter {
-    position: absolute;
-    z-index: -1;
-    height: calc(100% + 4px);
-    width: calc(100% + 4px);
-    top: -2px;
-    left: -2px;
-    border-radius: 8px;
-    background: linear-gradient(
-      110deg,
-      transparent,
-      transparent,
-      rgba(var(--streak-color), 0.3),
-      rgba(var(--streak-color), 1),
-      rgba(var(--streak-color), 0.3),
-      transparent,
-      transparent
-    );
-  }
-
-  .glitter-border .card-glitter {
-    background: linear-gradient(
-      120deg,
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      rgba(var(--streak-color), 0.3),
-      rgba(var(--streak-color), 1),
-      rgba(var(--streak-color), 0.3),
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      transparent,
-      transparent
-    );
-  }
-
-  .glitter-border {
-    border: 1px solid rgb(13, 33, 73);
-  }
-
-  /* Glitter Effect - End */
-
-  /* Fade Effect - Start */
-
-  .fade-enter {
-    opacity: 0;
-  }
-  .fade-enter-active {
-    opacity: 1;
-  }
-  .fade-exit {
-    opacity: 1;
-  }
-  .fade-exit-active {
-    opacity: 0;
-  }
-  .fade-enter-active,
-  .fade-exit-active {
-    transition: opacity 150ms ease-out;
-  }
-
-  /* Fade Effect - End */
-</style>

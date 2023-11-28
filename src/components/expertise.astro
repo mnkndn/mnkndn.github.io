@@ -1,5 +1,5 @@
 ---
-import DevIcon from "./devicon.jsx";
+import DevIcon from "./devicon.astro";
 import Card from "./card.jsx";
 ---
 
@@ -10,73 +10,29 @@ import Card from "./card.jsx";
   </h2>
   <div class="mx-auto max-w-7xl pt-12 flex flex-col">
     <ul class="flex gap-8 md:gap-12 flex-wrap justify-center mask-fade">
+      <DevIcon tooltip="HTML" iconName="devicon-html5-plain colored" />
+      <DevIcon tooltip="CSS" iconName="devicon-css3-plain colored" />
       <DevIcon
-        client:visible
-        tooltip="HTML"
-        iconName="devicon-html5-plain colored"
-      />
-      <DevIcon
-        client:visible
-        tooltip="CSS"
-        iconName="devicon-css3-plain colored"
-      />
-      <DevIcon
-        client:visible
         tooltip="Tailwind"
         iconName="devicon-tailwindcss-plain colored"
       />
       <DevIcon
-        client:visible
         tooltip="Javascript"
         iconName="devicon-javascript-plain colored"
       />
+      <DevIcon tooltip="React" iconName="devicon-react-original colored" />
       <DevIcon
-        client:visible
-        tooltip="React"
-        iconName="devicon-react-original colored"
-      />
-      <DevIcon
-        client:visible
         tooltip="Typescript"
         iconName="devicon-typescript-plain colored"
       />
+      <DevIcon tooltip="NextJS" iconName="devicon-nextjs-plain" />
+      <DevIcon tooltip="Webpack" iconName="devicon-webpack-plain colored" />
+      <DevIcon tooltip="Jest" iconName="devicon-jest-plain colored" />
+      <DevIcon tooltip="D3" iconName="devicon-d3js-plain colored" />
+      <DevIcon tooltip="NodeJS" iconName="devicon-nodejs-plain colored" />
+      <DevIcon tooltip="MongoDB" iconName="devicon-mongodb-plain colored" />
+      <DevIcon tooltip="GraphQL" iconName="devicon-graphql-plain colored" />
       <DevIcon
-        client:visible
-        tooltip="NextJS"
-        iconName="devicon-nextjs-plain"
-      />
-      <DevIcon
-        client:visible
-        tooltip="Webpack"
-        iconName="devicon-webpack-plain colored"
-      />
-      <DevIcon
-        client:visible
-        tooltip="Jest"
-        iconName="devicon-jest-plain colored"
-      />
-      <DevIcon
-        client:visible
-        tooltip="D3"
-        iconName="devicon-d3js-plain colored"
-      />
-      <DevIcon
-        client:visible
-        tooltip="NodeJS"
-        iconName="devicon-nodejs-plain colored"
-      />
-      <DevIcon
-        client:visible
-        tooltip="MongoDB"
-        iconName="devicon-mongodb-plain colored"
-      />
-      <DevIcon
-        client:visible
-        tooltip="GraphQL"
-        iconName="devicon-graphql-plain colored"
-      />
-      <DevIcon
-        client:visible
         tooltip="PostgresQL"
         iconName="devicon-postgresql-plain colored"
       />

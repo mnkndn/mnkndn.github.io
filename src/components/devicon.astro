@@ -1,0 +1,8 @@
+---
+const { tooltip, iconName } = Astro.props;
+---
+
+<i
+  title={tooltip}
+  class={`mt-10 text-5xl md:text-7xl lg:text-8xl cursor-pointer opacity-40 scale-95 hover:scale-100 hover:opacity-100 duration-75 transition-all ${iconName}`}
+></i>
