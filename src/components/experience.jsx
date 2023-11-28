@@ -106,8 +106,8 @@ export default () => {
                     className={`aspect-auto w-20 md:w-24 lg:w-36 ${
                       infoState === index
                         ? "opacity-100 saturate-100"
-                        : "opacity-80 saturate-0"
-                    } hover:opacity-80 saturate-0 duration-75 transition-opacity`}
+                        : "opacity-50 saturate-0 hover:opacity-75 hover:saturate-100"
+                    } duration-75 transition-opacity`}
                     src={item.imageSrc}
                   />
                 </div>
