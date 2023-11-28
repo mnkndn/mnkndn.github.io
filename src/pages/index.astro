@@ -42,11 +42,12 @@ const { title } = Astro.props;
     <Header />
     <main>
       <div class="fixed-gradient"></div>
+      <div class="moving-dot"></div>
       <Hero />
       <Gutter />
       <About />
       <Gutter />
-      <Experience client:load />
+      <Experience client:visible />
       <Gutter />
       <Expertise />
       <Gutter />
@@ -54,6 +55,17 @@ const { title } = Astro.props;
     </main>
   </body>
 </html>
+
+<script>
+  const movingDot = document.querySelector(".moving-dot") as HTMLElement;
+  document.body.addEventListener("mousemove", (e) => {
+    var x = e.pageX;
+    var y = e.pageY;
+    var newposX = x - 192.5;
+    var newposY = y - 265;
+    movingDot.style.transform = `translate3d(${newposX}px,${newposY}px,0px)`;
+  });
+</script>
 
 <style is:global>
   :root {
@@ -91,6 +103,20 @@ const { title } = Astro.props;
     top: 25vh;
     width: 100%;
     z-index: -1;
+  }
+
+  .moving-dot {
+    z-index: 5;
+    background-color: #2d6ae044;
+    filter: blur(200px);
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: -1;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    transition: transform 0.5s cubic-bezier(0.02, 1.23, 0.79, 1.08);
   }
 
   /* Glitter Effect - Start */
