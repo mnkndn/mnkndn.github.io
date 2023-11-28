@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Card from "./card.jsx";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
@@ -72,7 +72,6 @@ export default () => {
   const oneRef = useRef(null);
   const twoRef = useRef(null);
   const threeRef = useRef(null);
-  const timerRef = useRef(null);
   const nodeRef =
     infoState === 0
       ? zeroRef
@@ -84,18 +83,6 @@ export default () => {
 
   const { position, duration, points, glintColor, company, hyperlink } =
     info[infoState];
-
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setInfoState((state) => {
-        if (state === 3) {
-          return 0;
-        } else {
-          return state + 1;
-        }
-      });
-    }, 3000);
-  }, []);
 
   return (
     <>
@@ -112,9 +99,6 @@ export default () => {
                   key={index}
                   className="flex items-center justify-center cursor-pointer"
                   onClick={() => {
-                    if (timerRef?.current) {
-                      clearInterval(timerRef.current);
-                    }
                     setInfoState(index);
                   }}
                 >
@@ -144,25 +128,46 @@ export default () => {
               >
                 <div ref={nodeRef}>
                   <Card classes={`w-fit ${glintColor} glitter-border`}>
-                    <div className=" flex flex-col items-center md:flex-row md:justify-start gap-4 md:items-baseline">
-                      <a
-                        className="font-semibold text-2xl text-[color:rgb(var(--streak-color))] hover:underline hover:underline-offset-4"
-                        href={hyperlink}
-                      >
-                        {company}
-                      </a>
-                      <h3 className="font-semibold text-xl text-white">
-                        {position}
-                      </h3>
-                      <span className="font-light text-xs text-gray-500">
-                        {duration}
-                      </span>
-                    </div>
-                    <ul className="mt-4 ml-4 max-w-[60ch] text-base text-gray-400 list-disc">
-                      {points.map((point, index) => {
-                        return <li key={index}>{point}</li>;
-                      })}
-                    </ul>
+                    <a
+                      href={hyperlink}
+                      rel="noreferrer noopener"
+                      target="_blank"
+                      className="group"
+                    >
+                      <div className="flex flex-col items-center md:flex-row md:justify-start gap-4 md:items-baseline">
+                        <div className="flex gap-1 mr-2 items-center font-semibold text-2xl text-[color:rgb(var(--streak-color))]">
+                          {company}
+                          <span className="transform translate-y-1 group-hover:-translate-y-0 transition-transform">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="lucide lucide-arrow-up-right"
+                            >
+                              <path d="M7 7h10v10" />
+                              <path d="M7 17 17 7" />
+                            </svg>
+                          </span>
+                        </div>
+                        <h3 className="font-semibold text-xl text-white">
+                          {position}
+                        </h3>
+                        <span className="font-light text-xs text-gray-500">
+                          {duration}
+                        </span>
+                      </div>
+                      <ul className="mt-4 ml-4 max-w-[60ch] text-base text-gray-400 list-disc">
+                        {points.map((point, index) => {
+                          return <li key={index}>{point}</li>;
+                        })}
+                      </ul>
+                    </a>
                   </Card>
                 </div>
               </CSSTransition>
