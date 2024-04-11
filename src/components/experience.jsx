@@ -4,6 +4,20 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 const info = [
   {
+    company: "Factory Bucket",
+    hyperlink: "https://www.factorybucket.com/",
+    imageSrc: "/Factory_bucket.svg",
+    imageClass: "h-8 md:h-12 lg:h-16 -mt-2",
+    position: "Senior Software Engineer",
+    duration: "Jan 2024 - Present",
+    glintColor: "[--streak-color:42,172,226]",
+    points: [
+      "Built and maintained different front end applications for testing out and integrating various generative AI capabilities such as RAG, Semantic Kernel, Work instructions, Vectors, etc during the prototype phase for our ERP.",
+      "Built an architecture for displaying custom inline widgets from LLM’s markdown response stream such as showing calendar events, map location, timelines, charts , etc from AI’s response.",
+      "Developed an excel like interface in client which serves as the knowledge base to the underlying language model. This helps our users to establish business data and their relations to AI.",
+    ],
+  },
+  {
     company: "Certa",
     hyperlink: "https://www.getcerta.com/",
     imageSrc: "/Certa.svg",
@@ -103,7 +117,9 @@ export default () => {
                   }}
                 >
                   <img
-                    className={`aspect-auto w-20 md:w-24 lg:w-36 ${
+                    className={`aspect-auto ${
+                      item.imageClass
+                    } w-20 md:w-24 lg:w-36 ${
                       infoState === index
                         ? "opacity-100 saturate-100"
                         : "opacity-50 saturate-0 hover:opacity-75 hover:saturate-100"
