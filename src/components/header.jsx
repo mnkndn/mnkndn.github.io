@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { $route } from "../store";
+import { BASE_URL } from "../constants/config";
 
 export default () => {
   const route = useStore($route);
@@ -7,8 +8,8 @@ export default () => {
   return (
     <header className="w-full bg-[#0b1528d1] shadow-sm backdrop-blur-md sticky top-0 z-10 border-b border-[#1b2741]">
       <div className="mx-auto max-w-7xl flex items-center justify-between p-4 px-6">
-        <a href="/" className="gap-2 items-center hidden sm:flex">
-          <img className="h-8" src="/favicon.svg" />
+        <a href={BASE_URL} className="gap-2 items-center hidden sm:flex">
+          <img className="h-8" src={`${BASE_URL}/favicon.svg`} />
         </a>
         <nav className="flex gap-8 font-light text-gray-400 items-center flex-1 justify-evenly sm:flex-none sm:justify-normal">
           <a
@@ -27,8 +28,8 @@ export default () => {
           >
             ABOUT
           </a>
-          <a href="/" className="block sm:hidden gap-2 items-center">
-            <img className="h-8" src="/favicon.svg" />
+          <a href={BASE_URL} className="block sm:hidden gap-2 items-center">
+            <img className="h-8" src={`${BASE_URL}/favicon.svg`} />
           </a>
           <a
             href="#work"

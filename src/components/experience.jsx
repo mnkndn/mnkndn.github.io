@@ -1,12 +1,13 @@
 import { useState, useRef } from "react";
 import Card from "./card.jsx";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { BASE_URL } from "../constants/config.js";
 
 const info = [
   {
     company: "Factory Bucket",
     hyperlink: "https://www.factorybucket.com/",
-    imageSrc: "/Factory_bucket.svg",
+    imageSrc: `${BASE_URL}/Factory_bucket.svg`,
     imageClass: "h-8 md:h-12 lg:h-16 -mt-2",
     position: "Senior Software Engineer",
     duration: "Jan 2024 - Present",
@@ -20,7 +21,7 @@ const info = [
   {
     company: "Certa",
     hyperlink: "https://www.getcerta.com/",
-    imageSrc: "/Certa.svg",
+    imageSrc: `${BASE_URL}/Certa.svg`,
     position: "Senior Frontend Engineer",
     duration: "Mar 2023 - Sep 2023",
     glintColor: "[--streak-color:30,94,255]",
@@ -34,7 +35,7 @@ const info = [
   {
     company: "Autonom8",
     hyperlink: "https://autonom8.com/",
-    imageSrc: "/A8.svg",
+    imageSrc: `${BASE_URL}/A8.svg`,
     position: "Senior Software Engineer",
     duration: "Jun 2020 - Jan 2023",
     glintColor: "[--streak-color:60,97,156]",
@@ -52,7 +53,7 @@ const info = [
   {
     company: "Incedo",
     hyperlink: "https://www.incedoinc.com/",
-    imageSrc: "/Incedo.svg",
+    imageSrc: `${BASE_URL}/Incedo.svg`,
     position: "Software Engineer",
     duration: "Oct 2019 - Jun 2020",
     glintColor: "[--streak-color:238,73,34]",
@@ -67,7 +68,7 @@ const info = [
   {
     company: "Infosys",
     hyperlink: "https://www.infosys.com/",
-    imageSrc: "/Infosys.svg",
+    imageSrc: `${BASE_URL}/Infosys.svg`,
     position: "Software Engineer",
     duration: "Jun 2017 - Oct 2019",
     glintColor: "[--streak-color:55,129,194]",
