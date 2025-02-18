@@ -1,5 +1,4 @@
-# Personal Website
+# Personal space
 
 - Built with astro. 🚀
 - Styled with tailwind! 💨
-- Deployed to github pages! 📄
